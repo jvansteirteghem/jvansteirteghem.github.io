@@ -4,7 +4,7 @@
   <title><![CDATA[Stuff]]></title>
   <link href="http://jvansteirteghem.github.io/atom.xml" rel="self"/>
   <link href="http://jvansteirteghem.github.io/"/>
-  <updated>2013-08-08T11:33:55+02:00</updated>
+  <updated>2013-08-20T13:59:26+02:00</updated>
   <id>http://jvansteirteghem.github.io/</id>
   <author>
     <name><![CDATA[jvansteirteghem]]></name>
@@ -12,6 +12,757 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Examples of JAP_LOCAL/REMOTE_WS.json]]></title>
+    <link href="http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-slash-remote-ws-dot-json/"/>
+    <updated>2013-08-20T10:55:00+02:00</updated>
+    <id>http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-slash-remote-ws-dot-json</id>
+    <content type="html"><![CDATA[<h2>Example 1: LOCAL/REMOTE_PROXY_SERVER</h2>
+
+<p>JAP_LOCAL_WS.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"LOCAL_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 1080
+</span><span class='line'>},
+</span><span class='line'>"REMOTE_PROXY_SERVERS":
+</span><span class='line'>[
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "HTTP",
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 8080,
+</span><span class='line'>        "AUTHENTICATION":
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JAP_REMOTE_WS.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"REMOTE_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "TYPE": "HTTP",
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 8080,
+</span><span class='line'>    "AUTHENTICATION":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 2: LOCAL/REMOTE_PROXY_SERVER</h2>
+
+<p>You can generate a certificate authentication file (CA.pem) with CA.bat and CA.ini and you can generate a certificate file (C.pem) and a certificate key file (CK.pem) with C.bat and C.ini.</p>
+
+<p>JAP_LOCAL_WS.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"LOCAL_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 1080
+</span><span class='line'>},
+</span><span class='line'>"REMOTE_PROXY_SERVERS":
+</span><span class='line'>[
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "HTTPS",
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 8443,
+</span><span class='line'>        "AUTHENTICATION":
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        },
+</span><span class='line'>        "CERTIFICATE":
+</span><span class='line'>        {
+</span><span class='line'>            "AUTHENTICATION":
+</span><span class='line'>            {
+</span><span class='line'>                "FILE": "CA.pem"
+</span><span class='line'>            }
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JAP_REMOTE_WS.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"REMOTE_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "TYPE": "HTTPS",
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 8443,
+</span><span class='line'>    "AUTHENTICATION":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    ],
+</span><span class='line'>    "CERTIFICATE":
+</span><span class='line'>    {
+</span><span class='line'>        "KEY":
+</span><span class='line'>        {
+</span><span class='line'>            "FILE": "CK.pem"
+</span><span class='line'>        },
+</span><span class='line'>        "FILE": "C.pem"
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 3: LOCAL/REMOTE_PROXY_SERVER</h2>
+
+<p>JAP_LOCAL_WS.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"LOCAL_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 1080
+</span><span class='line'>},
+</span><span class='line'>"REMOTE_PROXY_SERVERS":
+</span><span class='line'>[
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "HTTPS",
+</span><span class='line'>        "ADDRESS": "",
+</span><span class='line'>        "PORT": 443,
+</span><span class='line'>        "AUTHENTICATION":
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        },
+</span><span class='line'>        "CERTIFICATE":
+</span><span class='line'>        {
+</span><span class='line'>            "AUTHENTICATION":
+</span><span class='line'>            {
+</span><span class='line'>                "FILE": "CA_DEFAULT.pem"
+</span><span class='line'>            }
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JAP_REMOTE_WS.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"REMOTE_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "TYPE": "HTTPS",
+</span><span class='line'>    "AUTHENTICATION":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Examples of JAP_LOCAL/REMOTE_SSH.json]]></title>
+    <link href="http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-slash-remote-ssh-dot-json/"/>
+    <updated>2013-08-20T10:55:00+02:00</updated>
+    <id>http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-slash-remote-ssh-dot-json</id>
+    <content type="html"><![CDATA[<h2>Example 1: LOCAL/REMOTE_PROXY_SERVER</h2>
+
+<p>You can generate a public/private key file (KP.pem) with KP.bat.</p>
+
+<p>JAP_LOCAL_SSH.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>    "LOCAL_PROXY_SERVER":
+</span><span class='line'>    {
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 1080,
+</span><span class='line'>        "KEYS":
+</span><span class='line'>        [
+</span><span class='line'>            {
+</span><span class='line'>                "PUBLIC":
+</span><span class='line'>                {
+</span><span class='line'>                    "FILE": "KP.pem",
+</span><span class='line'>                    "PASSPHRASE": ""
+</span><span class='line'>                },
+</span><span class='line'>                "PRIVATE":
+</span><span class='line'>                {
+</span><span class='line'>                    "FILE": "KP.pem",
+</span><span class='line'>                    "PASSPHRASE": ""
+</span><span class='line'>                }
+</span><span class='line'>            }
+</span><span class='line'>        ]
+</span><span class='line'>    },
+</span><span class='line'>    "REMOTE_PROXY_SERVERS":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "ADDRESS": "127.0.0.1",
+</span><span class='line'>            "PORT": 8022,
+</span><span class='line'>            "AUTHENTICATION":
+</span><span class='line'>            {
+</span><span class='line'>                "USERNAME": "1",
+</span><span class='line'>                "PASSWORD": "2"
+</span><span class='line'>            },
+</span><span class='line'>            "KEY":
+</span><span class='line'>            {
+</span><span class='line'>                "AUTHENTICATION":
+</span><span class='line'>                {
+</span><span class='line'>                    "FINGERPRINT": ""
+</span><span class='line'>                }
+</span><span class='line'>            }
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JAP_REMOTE_SSH.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"REMOTE_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 8022,
+</span><span class='line'>    "AUTHENTICATION":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    ],
+</span><span class='line'>    "KEY":
+</span><span class='line'>    {
+</span><span class='line'>        "PUBLIC":
+</span><span class='line'>        {
+</span><span class='line'>            "FILE": "KP.pem",
+</span><span class='line'>            "PASSPHRASE": ""
+</span><span class='line'>        },
+</span><span class='line'>        "PRIVATE":
+</span><span class='line'>        {
+</span><span class='line'>            "FILE": "KP.pem",
+</span><span class='line'>            "PASSPHRASE": ""
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 2: LOCAL/REMOTE_PROXY_SERVER</h2>
+
+<p>JAP_LOCAL_SSH.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>    "LOCAL_PROXY_SERVER":
+</span><span class='line'>    {
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 1080,
+</span><span class='line'>        "KEYS":
+</span><span class='line'>        [
+</span><span class='line'>            {
+</span><span class='line'>                "PUBLIC":
+</span><span class='line'>                {
+</span><span class='line'>                    "FILE": "KP.pem",
+</span><span class='line'>                    "PASSPHRASE": ""
+</span><span class='line'>                },
+</span><span class='line'>                "PRIVATE":
+</span><span class='line'>                {
+</span><span class='line'>                    "FILE": "KP.pem",
+</span><span class='line'>                    "PASSPHRASE": ""
+</span><span class='line'>                }
+</span><span class='line'>            }
+</span><span class='line'>        ]
+</span><span class='line'>    },
+</span><span class='line'>    "REMOTE_PROXY_SERVERS":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "ADDRESS": "127.0.0.1",
+</span><span class='line'>            "PORT": 8022,
+</span><span class='line'>            "AUTHENTICATION":
+</span><span class='line'>            {
+</span><span class='line'>                "USERNAME": "1",
+</span><span class='line'>                "PASSWORD": ""
+</span><span class='line'>            },
+</span><span class='line'>            "KEY":
+</span><span class='line'>            {
+</span><span class='line'>                "AUTHENTICATION":
+</span><span class='line'>                {
+</span><span class='line'>                    "FINGERPRINT": ""
+</span><span class='line'>                }
+</span><span class='line'>            }
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JAP_REMOTE_SSH.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"REMOTE_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 8022,
+</span><span class='line'>    "AUTHENTICATION":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "",
+</span><span class='line'>            "KEYS":
+</span><span class='line'>            [
+</span><span class='line'>                {
+</span><span class='line'>                    "PUBLIC":
+</span><span class='line'>                    {
+</span><span class='line'>                        "FILE": "KP.pem",
+</span><span class='line'>                        "PASSPHRASE": ""
+</span><span class='line'>                    }
+</span><span class='line'>                }
+</span><span class='line'>            ]
+</span><span class='line'>        }
+</span><span class='line'>    ],
+</span><span class='line'>    "KEY":
+</span><span class='line'>    {
+</span><span class='line'>        "PUBLIC":
+</span><span class='line'>        {
+</span><span class='line'>            "FILE": "KP.pem",
+</span><span class='line'>            "PASSPHRASE": ""
+</span><span class='line'>        },
+</span><span class='line'>        "PRIVATE":
+</span><span class='line'>        {
+</span><span class='line'>            "FILE": "KP.pem",
+</span><span class='line'>            "PASSPHRASE": ""
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Examples of JAP_LOCAL.json]]></title>
+    <link href="http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-dot-json/"/>
+    <updated>2013-08-20T10:55:00+02:00</updated>
+    <id>http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-dot-json</id>
+    <content type="html"><![CDATA[<h2>Example 1: LOGGER</h2>
+
+<p>You can set LOGGER.LEVEL to DEBUG, INFO, WARNING, ERROR or CRITICAL.</p>
+
+<p>JAP_LOCAL.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"LOGGER":
+</span><span class='line'>{
+</span><span class='line'>    "LEVEL": "DEBUG"
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 2: DNS_RESOLVER</h2>
+
+<p>JAP_LOCAL.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"DNS_RESOLVER":
+</span><span class='line'>{
+</span><span class='line'>    "HOSTS":
+</span><span class='line'>    {
+</span><span class='line'>        "FILE": "H.txt"
+</span><span class='line'>    },
+</span><span class='line'>    "SERVERS": 
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "ADDRESS": "8.8.8.8",
+</span><span class='line'>            "PORT": 53
+</span><span class='line'>        },
+</span><span class='line'>        {
+</span><span class='line'>            "ADDRESS": "8.8.8.4",
+</span><span class='line'>            "PORT": 53
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>H.txt:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>127.0.0.1       localhost</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 3: PROXY_SERVERS</h2>
+
+<p>You can set PROXY_SERVERS.TYPE to HTTP or SOCKS5.</p>
+
+<p>JAP_LOCAL.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"PROXY_SERVERS": 
+</span><span class='line'>[
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "HTTP",
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 8080,
+</span><span class='line'>        "AUTHENTICATION":
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 4: PROXY_SERVERS</h2>
+
+<p>JAP_LOCAL.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"PROXY_SERVERS": 
+</span><span class='line'>[
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "HTTP",
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 8080,
+</span><span class='line'>        "AUTHENTICATION":
+</span><span class='line'>        {
+</span><span class='line'>            "USERNAME": "1",
+</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>        }
+</span><span class='line'>    },
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "SOCKS5",
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 2080
+</span><span class='line'>    },
+</span><span class='line'>    {
+</span><span class='line'>        "TYPE": "SOCKS5",
+</span><span class='line'>        "ADDRESS": "127.0.0.1",
+</span><span class='line'>        "PORT": 3080
+</span><span class='line'>    }
+</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Example 5: LOCAL_PROXY_SERVER</h2>
+
+<p>JAP_LOCAL.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"LOCAL_PROXY_SERVER":
+</span><span class='line'>{
+</span><span class='line'>    "ADDRESS": "127.0.0.1",
+</span><span class='line'>    "PORT": 1080
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JAP 3.0.0 released!]]></title>
