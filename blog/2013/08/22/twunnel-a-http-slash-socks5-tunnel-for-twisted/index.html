@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Examples of JAP_LOCAL.json - Stuff</title>
+  <title>Twunnel: a HTTP/SOCKS5 tunnel for Twisted - Stuff</title>
   <meta name="author" content="jvansteirteghem">
 
   
-  <meta name="description" content="Examples of JAP_LOCAL.json" />
+  <meta name="description" content="Twunnel: a HTTP/SOCKS5 tunnel for Twisted" />
 
   
-  <meta name="keywords" content="examples, jap, socks5, proxy, server" />
+  <meta name="keywords" content="twunnel, http, socks5, tunnel, twisted" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-dot-json">
+  <link rel="canonical" href="http://jvansteirteghem.github.io/blog/2013/08/22/twunnel-a-http-slash-socks5-tunnel-for-twisted">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Stuff" type="application/atom+xml">
@@ -82,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Examples of JAP_LOCAL.json</h1>
+      <h1 class="entry-title">Twunnel: A HTTP/SOCKS5 Tunnel for Twisted</h1>
     
     
       <p class="meta">
@@ -98,32 +98,51 @@
   
 
 
-<time datetime="2013-08-20T10:55:00+02:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
+<time datetime="2013-08-22T09:06:00+02:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>Example 1: LOGGER</h2>
+<div class="entry-content"><p>Twunnel is a HTTP/SOCKS5 tunnel for Twisted.</p>
 
-<p>You can set LOGGER.LEVEL to DEBUG, INFO, WARNING, ERROR or CRITICAL.</p>
+<p>Twunnel supports:</p>
 
-<p>JAP_LOCAL.json:</p>
+<ul>
+<li>HTTP</li>
+<li>HTTP + Basic authentication</li>
+<li>SOCKS5</li>
+</ul>
+
+
+<p>The Twunnel project page: <a href="https://github.com/jvansteirteghem/twunnel">https://github.com/jvansteirteghem/twunnel</a></p>
+
+<h2>Examples</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>"LOGGER":
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import twunnel
+</span><span class='line'>
+</span><span class='line'>protocolFactory = ..
+</span><span class='line'>
+</span><span class='line'>configuration = \
 </span><span class='line'>{
-</span><span class='line'>    "LEVEL": "DEBUG"
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>tunnel = twunnel.Tunnel(configuration)
+</span><span class='line'>tunnel.connect("www.google.com", 80, protocolFactory)</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Example 2: DNS_RESOLVER</h2>
 
-<p>JAP_LOCAL.json:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -138,74 +157,22 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>"DNS_RESOLVER":
+</pre></td><td class='code'><pre><code class=''><span class='line'>from twisted.internet import ssl
+</span><span class='line'>import twunnel
+</span><span class='line'>
+</span><span class='line'>protocolFactory = ..
+</span><span class='line'>
+</span><span class='line'>configuration = \
 </span><span class='line'>{
-</span><span class='line'>    "HOSTS":
-</span><span class='line'>    {
-</span><span class='line'>        "FILE": "H.txt"
-</span><span class='line'>    },
-</span><span class='line'>    "SERVERS": 
-</span><span class='line'>    [
-</span><span class='line'>        {
-</span><span class='line'>            "ADDRESS": "8.8.8.8",
-</span><span class='line'>            "PORT": 53
-</span><span class='line'>        },
-</span><span class='line'>        {
-</span><span class='line'>            "ADDRESS": "8.8.8.4",
-</span><span class='line'>            "PORT": 53
-</span><span class='line'>        }
-</span><span class='line'>    ]
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>contextFactory = ssl.ClientContextFactory()
+</span><span class='line'>
+</span><span class='line'>tunnel = twunnel.Tunnel(configuration)
+</span><span class='line'>tunnel.connect("www.google.com", 443, protocolFactory, contextFactory)</span></code></pre></td></tr></table></div></figure>
 
 
-<p>H.txt:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>127.0.0.1       localhost</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Example 3: PROXY_SERVERS</h2>
-
-<p>You can set PROXY_SERVERS.TYPE to HTTP or SOCKS5.</p>
-
-<p>JAP_LOCAL.json:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>"PROXY_SERVERS": 
-</span><span class='line'>[
-</span><span class='line'>    {
-</span><span class='line'>        "TYPE": "HTTP",
-</span><span class='line'>        "ADDRESS": "127.0.0.1",
-</span><span class='line'>        "PORT": 8080,
-</span><span class='line'>        "AUTHENTICATION":
-</span><span class='line'>        {
-</span><span class='line'>            "USERNAME": "1",
-</span><span class='line'>            "PASSWORD": "2"
-</span><span class='line'>        }
-</span><span class='line'>    }
-</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Example 4: PROXY_SERVERS</h2>
-
-<p>JAP_LOCAL.json:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -230,45 +197,129 @@
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>"PROXY_SERVERS": 
-</span><span class='line'>[
-</span><span class='line'>    {
-</span><span class='line'>        "TYPE": "HTTP",
-</span><span class='line'>        "ADDRESS": "127.0.0.1",
-</span><span class='line'>        "PORT": 8080,
-</span><span class='line'>        "AUTHENTICATION":
+</pre></td><td class='code'><pre><code class=''><span class='line'>import twunnel
+</span><span class='line'>
+</span><span class='line'>protocolFactory = ..
+</span><span class='line'>
+</span><span class='line'>configuration = \
+</span><span class='line'>{
+</span><span class='line'>    "PROXY_SERVERS":
+</span><span class='line'>    [
 </span><span class='line'>        {
-</span><span class='line'>            "USERNAME": "1",
-</span><span class='line'>            "PASSWORD": "2"
+</span><span class='line'>            "TYPE": "HTTP",
+</span><span class='line'>            "ADDRESS": "127.0.0.1",
+</span><span class='line'>            "PORT": 8080,
+</span><span class='line'>            "AUTHENTICATION":
+</span><span class='line'>            {
+</span><span class='line'>                "USERNAME": "1",
+</span><span class='line'>                "PASSWORD": "2"
+</span><span class='line'>            }
 </span><span class='line'>        }
-</span><span class='line'>    },
-</span><span class='line'>    {
-</span><span class='line'>        "TYPE": "SOCKS5",
-</span><span class='line'>        "ADDRESS": "127.0.0.1",
-</span><span class='line'>        "PORT": 2080
-</span><span class='line'>    },
-</span><span class='line'>    {
-</span><span class='line'>        "TYPE": "SOCKS5",
-</span><span class='line'>        "ADDRESS": "127.0.0.1",
-</span><span class='line'>        "PORT": 3080
-</span><span class='line'>    }
-</span><span class='line'>]</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    ]
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>tunnel = twunnel.Tunnel(configuration)
+</span><span class='line'>tunnel.connect("www.google.com", 80, protocolFactory)</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Example 5: LOCAL_PROXY_SERVER</h2>
 
-<p>JAP_LOCAL.json:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>"LOCAL_PROXY_SERVER":
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import twunnel
+</span><span class='line'>
+</span><span class='line'>protocolFactory = ..
+</span><span class='line'>
+</span><span class='line'>configuration = \
 </span><span class='line'>{
-</span><span class='line'>    "ADDRESS": "127.0.0.1",
-</span><span class='line'>    "PORT": 1080
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    "PROXY_SERVERS":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "TYPE": "SOCKS5",
+</span><span class='line'>            "ADDRESS": "127.0.0.1",
+</span><span class='line'>            "PORT": 1080
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>tunnel = twunnel.Tunnel(configuration)
+</span><span class='line'>tunnel.connect("www.google.com", 80, protocolFactory)</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import twunnel
+</span><span class='line'>
+</span><span class='line'>protocolFactory = ..
+</span><span class='line'>
+</span><span class='line'>configuration = \
+</span><span class='line'>{
+</span><span class='line'>    "PROXY_SERVERS":
+</span><span class='line'>    [
+</span><span class='line'>        {
+</span><span class='line'>            "TYPE": "HTTP",
+</span><span class='line'>            "ADDRESS": "127.0.0.1",
+</span><span class='line'>            "PORT": 8080,
+</span><span class='line'>            "AUTHENTICATION":
+</span><span class='line'>            {
+</span><span class='line'>                "USERNAME": "1",
+</span><span class='line'>                "PASSWORD": "2"
+</span><span class='line'>            }
+</span><span class='line'>        },
+</span><span class='line'>        {
+</span><span class='line'>            "TYPE": "SOCKS5",
+</span><span class='line'>            "ADDRESS": "127.0.0.1",
+</span><span class='line'>            "PORT": 1080
+</span><span class='line'>        }
+</span><span class='line'>    ]
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>tunnel = twunnel.Tunnel(configuration)
+</span><span class='line'>tunnel.connect("www.google.com", 80, protocolFactory)</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
@@ -292,7 +343,7 @@
   
 
 
-<time datetime="2013-08-20T10:55:00+02:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
+<time datetime="2013-08-22T09:06:00+02:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2013</time>
       
 
 
@@ -300,7 +351,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-dot-json/" data-via="" data-counturl="http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-dot-json/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jvansteirteghem.github.io/blog/2013/08/22/twunnel-a-http-slash-socks5-tunnel-for-twisted/" data-via="" data-counturl="http://jvansteirteghem.github.io/blog/2013/08/22/twunnel-a-http-slash-socks5-tunnel-for-twisted/" >Tweet</a>
   
   
   
@@ -309,10 +360,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/08/jap-3-dot-0-0-released/" title="Previous Post: JAP 3.0.0 released!">&laquo; JAP 3.0.0 released!</a>
+        <a class="basic-alignment left" href="/blog/2013/08/20/examples-of-jap-local-slash-remote-ws-dot-json/" title="Previous Post: Examples of JAP_LOCAL/REMOTE_WS.json">&laquo; Examples of JAP_LOCAL/REMOTE_WS.json</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/20/examples-of-jap-local-slash-remote-ssh-dot-json/" title="Next Post: Examples of JAP_LOCAL/REMOTE_SSH.json">Examples of JAP_LOCAL/REMOTE_SSH.json &raquo;</a>
       
     </p>
   </footer>

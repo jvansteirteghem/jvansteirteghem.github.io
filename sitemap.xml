@@ -2,33 +2,39 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://jvansteirteghem.github.io/blog/2013/08/08/jap-3-dot-0-0-released/</loc>
-        <lastmod>2013-08-20T10:56:52+02:00</lastmod>
+        <lastmod>2013-08-22T09:47:28+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-dot-json/
         </loc>
-        <lastmod>2013-08-20T13:42:58+02:00</lastmod>
+        <lastmod>2013-08-22T09:47:47+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-slash-remote-ssh-dot-json/
         </loc>
-        <lastmod>2013-08-20T13:42:04+02:00</lastmod>
+        <lastmod>2013-08-22T09:47:54+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://jvansteirteghem.github.io/blog/2013/08/20/examples-of-jap-local-slash-remote-ws-dot-json/
         </loc>
-        <lastmod>2013-08-20T13:42:29+02:00</lastmod>
+        <lastmod>2013-08-22T09:47:36+02:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://jvansteirteghem.github.io/blog/2013/08/22/twunnel-a-http-slash-socks5-tunnel-for-twisted/
+        </loc>
+        <lastmod>2013-08-22T09:26:50+02:00</lastmod>
     </url>
     <url>
         <loc>http://jvansteirteghem.github.io/blog/archives/</loc>
-        <lastmod>2013-08-20T13:42:58+02:00</lastmod>
+        <lastmod>2013-08-22T09:47:54+02:00</lastmod>
     </url>
     <url>
         <loc>http://jvansteirteghem.github.io/</loc>
-        <lastmod>2013-08-20T13:42:58+02:00</lastmod>
+        <lastmod>2013-08-22T09:47:54+02:00</lastmod>
     </url>
     <url>
         <loc>http://jvansteirteghem.github.io/robots.txt</loc>
