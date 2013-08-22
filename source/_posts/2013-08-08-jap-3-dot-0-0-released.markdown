@@ -4,6 +4,8 @@ title: "JAP 3.0.0 released!"
 date: 2013-08-08 08:48
 comments: true
 categories: 
+keywords: "jap, socks5, proxy, server"
+description: "JAP 3.0.0 released!"
 ---
 JAP is a SOCKS5 proxy server written in PYTHON and JAVASCRIPT.
 JAP has a local proxy server (which supports TCP, TCP over SSH and TCP over WS/WSS) and a remote proxy server (which supports TCP over SSH and TCP over WS/WSS).

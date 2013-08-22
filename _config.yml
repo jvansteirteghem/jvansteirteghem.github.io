@@ -4,10 +4,11 @@
 
 url: http://jvansteirteghem.github.io
 title: Stuff
-subtitle: Interesting and not so interesting stuff.
+subtitle: Interesting and not so interesting stuff
 author: jvansteirteghem
 simple_search: http://google.com/search
-description:
+keywords: "interesting, stuff"
+description: "Interesting and not so interesting stuff"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in

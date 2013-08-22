@@ -4,6 +4,8 @@ title: "Examples of JAP_LOCAL/REMOTE_SSH.json"
 date: 2013-08-20 10:55
 comments: true
 categories: 
+keywords: "examples, jap, socks5, proxy, server, ssh"
+description: "Examples of JAP_LOCAL/REMOTE_SSH.json"
 ---
 ## Example 1: LOCAL/REMOTE_PROXY_SERVER
 You can generate a public/private key file (KP.pem) with KP.bat.

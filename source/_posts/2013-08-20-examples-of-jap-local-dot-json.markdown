@@ -4,6 +4,8 @@ title: "Examples of JAP_LOCAL.json"
 date: 2013-08-20 10:55
 comments: true
 categories: 
+keywords: "examples, jap, socks5, proxy, server"
+description: "Examples of JAP_LOCAL.json"
 ---
 ## Example 1: LOGGER
 You can set LOGGER.LEVEL to DEBUG, INFO, WARNING, ERROR or CRITICAL.
